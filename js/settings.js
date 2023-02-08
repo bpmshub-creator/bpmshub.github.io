@@ -16,7 +16,7 @@ if (tabData.icon) {
 }
 
 var settingsDefaultTab = {
-  title: "Settings | NRG",
+  title: "Settings | BpmsHub",
   icon: "./images/logo.png",
 };
 
