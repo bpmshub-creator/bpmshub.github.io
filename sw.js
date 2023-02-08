@@ -12,7 +12,7 @@ async function isBlocked(url) {
     }
 }
 
-async function getCDN(cdns, default) {
+async function getCDN(cdns) {
 for (let cdn in cdns) {
     var blocked = await isBlocked(cdns[cdn])
     if (!blocked) {
@@ -20,12 +20,12 @@ for (let cdn in cdns) {
     }
 }
 
-return null;
+return cdns[0];
 }
 
-var currentCDN = await getCDN(["https://raw.githack.com/3kh0/3kh0-assets/main", "https://d1wnfatapmxxni.cloudfront.net", "https://d38a7mob3guz4f.cloudfront.net", "https://cloudbase-labs.s3.amazonaws.com"], "https://raw.githack.com/3kh0/3kh0-assets/main")
 async function handleRequest(fetchPath) {
-     fetchPath = await currentCDN + fetchPath
+var currentCDN = await getCDN(["https://raw.githack.com/3kh0/3kh0-assets/main", "https://d1wnfatapmxxni.cloudfront.net", "https://d38a7mob3guz4f.cloudfront.net", "https://cloudbase-labs.s3.amazonaws.com"])
+    fetchPath = currentCDN + "/" + fetchPath
     if (!fetchPath.endsWith(".html")) {
         return fetch(fetchPath)
     }
