@@ -21,7 +21,7 @@ if (tabData.icon) {
   document.querySelector("link[rel='icon']").href = tabData.icon;
 }
 
-var theme = localStorage.getItem("theme") || "default";
+var theme = localStorage.getItem("theme") || "sunset";
 
 document.body.setAttribute("theme", theme);
 
