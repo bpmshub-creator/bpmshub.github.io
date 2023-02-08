@@ -19,4 +19,4 @@ Sometimes, we'll have a backlog of issues that need to be fixed. Do everyone a f
 
 That's it. And don't forget, <i>to have fun.</i>
 
-**This repository hosts the UI for 3kh0 v4! If you want to contibute a game, make a pull request on [https://github.com/3kh0/3kh0-Assets](https://github.com/3kh0/3kh0-Assets)!**
+**This repository hosts the UI for BpmsHub v4! If you want to contibute a game, make a pull request on [https://github.com/3kh0/3kh0-Assets](https://github.com/3kh0/3kh0-Assets)!**

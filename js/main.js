@@ -1,11 +1,11 @@
 // Hello there!
 //
-// If you want to add my games to your site, please reach out at my email: echo-the-coder@tuta.io, or discord: 3kh0_#6969
+// If you want to add my games to your site, please reach out at my email: jobro10133@icloud.com, or discord: Idot#6258
 
 console.warn(
   "%cNote!",
   "color: purple; font-weight: 600; background: yellow; padding: 0 5px; border-radius: 5px",
-  "If you want to add my games to your site, please reach out at my email: echo-the-coder@tuta.io\nPlease do not just add them without asking me first! Thank you!"
+  "If you want to add my games to your site, please reach out at my discord: Idot#6258\nPlease do not just add them without asking me first! Thank you!"
 );
 
 function script(text) {
