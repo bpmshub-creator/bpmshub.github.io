@@ -405,6 +405,11 @@
     "img": "/files/draw-the-hill/icons/icon-512.png"
   },
   {
+    "name": "Drift Boss",
+    "url": "/files/drift-boss/index.html",
+    "img": "/files/drift-boss/drift-boss.png"
+  },
+  {
     "name": "Drift Hunters",
     "url": "/files/drift-hunters/index.html",
     "img": "/files/drift-hunters/drift-hunters.png"
