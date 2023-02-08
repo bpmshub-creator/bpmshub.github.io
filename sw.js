@@ -1,4 +1,31 @@
+async function isBlocked(url) {
+    try {
+        var README = await fetch(url + "/README.md")
+        var content = await README.text()
+        if (content.startsWith("# 3kh0 Assets")) {
+            return false;
+        } else {
+            return true;
+        }
+    } catch {
+        return true;
+    }
+}
+
+async function getCDN(cdns, default) {
+for (let cdn in cdns) {
+    var blocked = await isBlocked(cdns[cdn])
+    if (!blocked) {
+        return cdns[cdn];
+    }
+}
+
+return null;
+}
+
+var currentCDN = await getCDN(["https://raw.githack.com/3kh0/3kh0-assets/main", "https://d1wnfatapmxxni.cloudfront.net", "https://d38a7mob3guz4f.cloudfront.net"], "https://raw.githack.com/3kh0/3kh0-assets/main")
 async function handleRequest(fetchPath) {
+     fetchPath = await currentCDN + fetchPath
     if (!fetchPath.endsWith(".html")) {
         return fetch(fetchPath)
     }
@@ -20,7 +47,7 @@ self.addEventListener("fetch", function(e) {
     var path = new URL(e.request.url).pathname
 
     if (path.startsWith("/files/")) {
-        var fetchPath = "https://raw.githack.com/3kh0/3kh0-assets/main/" + path.split("/files/")[1]
+        var fetchPath = path.split("/files/")[1]
 
         return e.respondWith(handleRequest(fetchPath))
     } else {
